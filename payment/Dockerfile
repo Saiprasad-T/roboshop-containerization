@@ -8,6 +8,7 @@ RUN apk add --no-cache \
 RUN pip3 install --no-cache-dir --prefix=/install -r requirements.txt
 
 FROM python:3.9.25-alpine3.22
+RUN apk add --no-cache pcre
 RUN addgroup -S roboshop && \
     adduser -S -G roboshop -h /app -s /sbin/nologin roboshop
 WORKDIR /app

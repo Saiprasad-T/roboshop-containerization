@@ -3,6 +3,7 @@ services:
     build:
       context: ./catalogue
       dockerfile: Dockerfile
+    container_name: catalogue
     image: saithota9/catalogue:1.0.0
     depends_on:
       - mongodb
@@ -13,6 +14,7 @@ services:
     build:
       context: ./cart
       dockerfile: Dockerfile
+    container_name: cart
     image: saithota9/cart:1.0.0
     depends_on:
       - redis
@@ -23,6 +25,7 @@ services:
     build:
       context: ./payment
       dockerfile: Dockerfile
+    container_name: payment
     image: saithota9/payment:1.0.0
     depends_on:
       - mysql
@@ -33,6 +36,7 @@ services:
     build:
       context: ./shipping
       dockerfile: Dockerfile
+    container_name: shipping
     image: saithota9/shipping:1.0.0
     depends_on:
       - mysql
@@ -43,6 +47,7 @@ services:
     build:
       context: ./user
       dockerfile: Dockerfile
+    container_name: user
     image: saithota9/user:1.0.0
     depends_on:
       - mongodb
@@ -54,6 +59,7 @@ services:
     build:
      context: ./frontend
      dockerfile: Dockerfile
+    container_name: frontend
     image: saithota9/frontend:1.0.0
     ports:
     - "80:80"
@@ -75,7 +81,7 @@ services:
   mysql:
    build: ./mysql
    image : saithota9/mysql:1.0.0
-   container_name: mysqldb
+   container_name: mysql
    networks:
      - roboshop
   rabbitmq:
