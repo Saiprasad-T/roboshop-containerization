@@ -1,0 +1,30 @@
+services:
+  catalogue:
+    build:
+      context: ./catalogue
+      dockerfile: Dockerfile
+    image: catalogue:1.0.0
+
+  cart:
+    build:
+      context: ./cart
+      dockerfile: Dockerfile
+    image: cart:1.0.0
+
+  payment:
+    build:
+      context: ./payment
+      dockerfile: Dockerfile
+    image: payment:1.0.0
+
+  shipping:
+    build:
+      context: ./shipping
+      dockerfile: Dockerfile
+    image: shipping:1.0.0
+  
+  user:
+    build:
+      context: ./user
+      dockerfile: Dockerfile
+    image: user:1.0.0
