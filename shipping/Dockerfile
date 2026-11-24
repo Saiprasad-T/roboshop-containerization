@@ -1,6 +1,6 @@
 FROM maven:3.10.2-eclipse-temurin-17
 WORKDIR /app
-COPY src .
+COPY src ./src
 COPY pom.xml .
 RUN mvn clean package 
 RUN mv target/shipping-1.0.jar shipping.jar 
