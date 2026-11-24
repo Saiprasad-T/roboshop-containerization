@@ -16,7 +16,7 @@ COPY --chown=roboshop:roboshop server.js ./
 
 ENV MONGO=true \
     REDIS_URL='redis://redis:6379' \
-    MONGO_URL="mongodb://mongodb:27017/catalogue"
+    MONGO_URL="mongodb://mongodb:27017/users"
 
 USER roboshop
 
