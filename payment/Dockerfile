@@ -5,11 +5,11 @@ COPY *.ini .
 COPY *.txt .
 RUN apk add --no-cache build-base linux-headers pcre-dev 
 RUN pip3 install -r requirements.txt
-ENV CART_HOST=<CART-SERVER-IPADDRESS> \
+ENV CART_HOST=cart \
     CART_PORT=8080 \
-    USER_HOST=<USER-SERVER-IPADDRESS> \
+    USER_HOST=user \
     USER_PORT=8080 \
-    AMQP_HOST=<RABBITMQ-SERVER-IPADDRESS> \
+    AMQP_HOST=rabbitmq \
     AMQP_USER=roboshop \
     AMQP_PASS=roboshop123
 CMD ["uwsgi","--ini","payment.ini"]
