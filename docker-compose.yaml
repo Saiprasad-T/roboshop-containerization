@@ -4,7 +4,7 @@ services:
       context: ./catalogue
       dockerfile: Dockerfile
     container_name: catalogue
-    image: saithota9/catalogue:1.0.0
+    image: saidevops0928/catalogue:1.0.0
     depends_on:
       - mongodb
     networks:
@@ -15,7 +15,7 @@ services:
       context: ./cart
       dockerfile: Dockerfile
     container_name: cart
-    image: saithota9/cart:1.0.0
+    image: saidevops0928/cart:1.0.0
     depends_on:
       - redis
     networks:
@@ -26,7 +26,7 @@ services:
       context: ./payment
       dockerfile: Dockerfile
     container_name: payment
-    image: saithota9/payment:1.0.0
+    image: saidevops0928/payment:1.0.0
     depends_on:
       - mysql
     networks:
@@ -37,7 +37,7 @@ services:
       context: ./shipping
       dockerfile: Dockerfile
     container_name: shipping
-    image: saithota9/shipping:1.0.0
+    image: saidevops0928/shipping:1.0.0
     depends_on:
       - mysql
     networks:
@@ -48,7 +48,7 @@ services:
       context: ./user
       dockerfile: Dockerfile
     container_name: user
-    image: saithota9/user:1.0.0
+    image: saidevops0928/user:1.0.0
     depends_on:
       - mongodb
       - redis
@@ -60,7 +60,7 @@ services:
      context: ./frontend
      dockerfile: Dockerfile
     container_name: frontend
-    image: saithota9/frontend:1.0.0
+    image: saidevops0928/frontend:1.0.0
     ports:
     - "80:80"
     depends_on:
@@ -73,27 +73,27 @@ services:
      - roboshop
   mongodb:
    build: ./mongodb  
-   image : saithota9/mongodb:1.0.0
+   image : saidevops0928/mongodb:1.0.0
    container_name: mongodb
    networks:
      - roboshop
 
   mysql:
    build: ./mysql
-   image : saithota9/mysql:1.0.0
+   image : saidevops0928/mysql:1.0.0
    container_name: mysql
    networks:
      - roboshop
   rabbitmq:
    build: ./rabbitmq  
-   image : saithota9/rabbitmq:1.0.0
+   image : saidevops0928/rabbitmq:1.0.0
    container_name: rabbitmq
    networks:
      - roboshop
    
   redis:
    build: ./redis
-   image: saithota9/redis:1.0.0
+   image: saidevops0928/redis:1.0.0
    container_name: redis
    networks:
      - roboshop
