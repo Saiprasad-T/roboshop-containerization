@@ -14,9 +14,9 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --chown=roboshop:roboshop package*.json ./
 COPY --chown=roboshop:roboshop server.js ./
 
-ENV REDIS_HOST=redis \
-    CATALOGUE_HOST=catalogue \
-    MONGO_URL="mongodb://mongodb:27017/catalogue"
+# ENV REDIS_HOST=redis \  #this are declared in configmap
+#     CATALOGUE_HOST=catalogue \
+#     MONGO_URL="mongodb://mongodb:27017/catalogue"
 
 USER roboshop
 

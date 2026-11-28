@@ -14,8 +14,8 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --chown=roboshop:roboshop package*.json ./
 COPY --chown=roboshop:roboshop server.js ./
 
-ENV MONGO=true \
-    MONGO_URL="mongodb://mongodb:27017/catalogue"
+# ENV MONGO=true \ #this are declared in configmap
+#     MONGO_URL="mongodb://mongodb:27017/catalogue"
 
 USER roboshop
 
